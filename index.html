@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ARCHIVRES — Collages radiophoniques</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: #080808;
+      color: #f2f2f2;
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.5;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 28px 5%;
+      border-bottom: 1px solid #333;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .logo {
+      font-size: 22px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 24px;
+      font-size: 14px;
+      text-transform: uppercase;
+    }
+
+    .menu a:hover,
+    .links a:hover {
+      opacity: 0.6;
+    }
+
+    .hero {
+      padding: 80px 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(60px, 14vw, 190px);
+      line-height: 0.85;
+      letter-spacing: -6px;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin-top: 35px;
+      font-size: clamp(18px, 2.5vw, 32px);
+    }
+
+    .scroll {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    section {
+      padding: 100px 5%;
+      border-bottom: 1px solid #333;
+    }
+
+    h2 {
+      margin: 0 0 45px;
+      font-size: clamp(32px, 6vw, 75px);
+      text-transform: uppercase;
+      letter-spacing: -2px;
+    }
+
+    .episode-title {
+      margin-bottom: 12px;
+      font-size: clamp(26px, 4vw, 54px);
+      text-transform: uppercase;
+    }
+
+    .episode-description {
+      max-width: 760px;
+      margin-bottom: 35px;
+      color: #bdbdbd;
+      font-size: 17px;
+    }
+
+    iframe {
+      width: 100%;
+      border: none;
+    }
+
+    .archives {
+      border-top: 1px solid #333;
+    }
+
+    .archive-item {
+      display: grid;
+      grid-template-columns: 100px 1fr auto;
+      gap: 20px;
+      align-items: center;
+      padding: 25px 0;
+      border-bottom: 1px solid #333;
+      text-transform: uppercase;
+    }
+
+    .archive-item:hover {
+      opacity: 0.6;
+    }
+
+    .archive-number {
+      color: #777;
+    }
+
+    .about-text {
+      max-width: 900px;
+      font-size: clamp(22px, 3vw, 42px);
+      line-height: 1.25;
+    }
+
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+      font-size: 18px;
+      text-transform: uppercase;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      padding: 35px 5%;
+      color: #777;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 700px) {
+      header {
+        min-height: 90vh;
+      }
+
+      .menu {
+        gap: 12px;
+        font-size: 11px;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+
+      section {
+        padding: 70px 5%;
+      }
+
+      .archive-item {
+        grid-template-columns: 55px 1fr;
+      }
+
+      .archive-item span:last-child {
+        display: none;
+      }
+
+      footer {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header id="accueil">
+    <nav>
+      <div class="logo">ARCHIVRES</div>
+
+      <div class="menu">
+        <a href="#ecouter">Écouter</a>
+        <a href="#archives">Archives</a>
+        <a href="#apropos">À propos</a>
+      </div>
+    </nav>
+
+    <div class="hero">
+      <h1>ARCHI<br>VRES</h1>
+
+      <p class="subtitle">
+        Collages radiophoniques mêlant archives, interviews,
+        extraits de films et sélections musicales.
+      </p>
+    </div>
+
+    <div class="scroll">Dernière transmission ↓</div>
+  </header>
+
+  <section id="ecouter">
+    <h2>À l'écoute</h2>
+
+    <div class="episode-title">
+      ARCHIVRES_06 — Sans Modération
+    </div>
+
+    <p class="episode-description">
+      Une heure de collages sonores construite autour de l'archive
+      « Se soigner avec du vin », mêlant fragments de conversation
+      et sélection musicale éclectique.
+    </p>
+
+    <iframe
+      height="300"
+      scrolling="no"
+      allow="autoplay"
+      src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/archivres_radio/archivre_06-sans-moderation&color=%23ffffff&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=false">
+    </iframe>
+  </section>
+
+  <section id="archives">
+    <h2>Archives</h2>
+
+    <div class="archives">
+
+      <a class="archive-item" href="https://soundcloud.com/archivres_radio" target="_blank">
+        <span class="archive-number">06</span>
+        <strong>Sans Modération</strong>
+        <span>Écouter ↗</span>
+      </a>
+
+      <a class="archive-item" href="https://soundcloud.com/archivres_radio" target="_blank">
+        <span class="archive-number">05</span>
+        <strong>Lost Signal</strong>
+        <span>Écouter ↗</span>
+      </a>
+
+      <a class="archive-item" href="https://soundcloud.com/archivres_radio" target="_blank">
+        <span class="archive-number">04</span>
+        <strong>Ufology</strong>
+        <span>Écouter ↗</span>
+      </a>
+
+      <a class="archive-item" href="https://soundcloud.com/archivres_radio" target="_blank">
+        <span class="archive-number">03</span>
+        <strong>ARCHIVRES_03</strong>
+        <span>Écouter ↗</span>
+      </a>
+
+      <a class="archive-item" href="https://soundcloud.com/archivres_radio" target="_blank">
+        <span class="archive-number">02</span>
+        <strong>Weirdies</strong>
+        <span>Écouter ↗</span>
+      </a>
+
+      <a class="archive-item" href="https://soundcloud.com/archivres_radio" target="_blank">
+        <span class="archive-number">01</span>
+        <strong>Golden Hour</strong>
+        <span>Écouter ↗</span>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="apropos">
+    <h2>À propos</h2>
+
+    <div class="about-text">
+      ARCHIVRES est une série de collages radiophoniques d'une heure
+      dans lesquels archives sonores, récits, interviews, cinéma et
+      musiques alternatives se rencontrent.
+    </div>
+
+    <div class="links">
+      <a href="https://soundcloud.com/archivres_radio" target="_blank">
+        SoundCloud ↗
+      </a>
+
+      <a href="https://www.instagram.com/archivres.radio/" target="_blank">
+        Instagram ↗
+      </a>
+
+      <a href="mailto:raoul.philly@gmail.com">
+        Contact ↗
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    <span>ARCHIVRES — Radio Collages</span>
+    <span>Lyon / Paris</span>
+  </footer>
+
+</body>
+</html>
