@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ARCHIVRES</title>
+<style>
+:root{--bg:#070707;--fg:#f4f1e8;--muted:#8f8d87;--line:#2b2b2b;--yellow:#ffc247;--panel:#0e0e0e}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--fg);font-family:Arial,Helvetica,sans-serif;line-height:1.35}
+a{color:inherit;text-decoration:none}img{display:block;width:100%}.wrap{width:min(1180px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:50;background:rgba(7,7,7,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.header-inner{height:58px;display:flex;align-items:center;justify-content:space-between;gap:24px}.brand{font-weight:900;font-size:19px;letter-spacing:-.04em}
+nav{display:flex;gap:21px;font-size:10px;text-transform:uppercase;letter-spacing:.14em}nav a:hover{color:var(--yellow)}
+.hero{padding:70px 0 54px;border-bottom:1px solid var(--line)}.hero-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
+.eyebrow{margin:0 0 18px;color:var(--yellow);font-size:10px;text-transform:uppercase;letter-spacing:.16em}
+h1{margin:0;max-width:820px;font-size:clamp(44px,7vw,92px);line-height:.9;letter-spacing:-.07em;font-weight:900}
+.intro{max-width:430px;margin:0 0 4px;color:#c1beb6;font-size:15px}
+.radio{border-bottom:1px solid var(--line);background:var(--panel)}.radio-inner{min-height:64px;display:grid;grid-template-columns:auto 1fr auto;gap:20px;align-items:center}
+.onair{display:flex;align-items:center;gap:9px;font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:.14em}.dot{width:8px;height:8px;border-radius:50%;background:var(--yellow)}
+.radio-title{font-size:13px}.radio-title span{color:var(--muted)}.radio-button{border:1px solid #444;padding:9px 12px;font-size:9px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+section.content{padding:58px 0 68px;border-bottom:1px solid var(--line)}.section-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:25px;gap:20px}
+.section-head h2{margin:0;font-size:14px;text-transform:uppercase;letter-spacing:.13em}.section-head p{margin:0;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.12em}
+.mix-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px 22px}.cover-link{display:block;position:relative;overflow:hidden;background:#111;aspect-ratio:1}
+.cover-link img{width:100%;height:100%;object-fit:cover;transition:transform .25s ease,opacity .25s ease}.cover-link::after{content:"ÉCOUTER ↗";position:absolute;right:10px;bottom:10px;padding:7px 9px;background:#070707;color:#fff;font-size:8px;letter-spacing:.14em;opacity:0;transition:.2s}
+.cover-link:hover img{transform:scale(1.015);opacity:.84}.cover-link:hover::after{opacity:1}.mix-meta{padding-top:11px}.mix-number{display:block;margin-bottom:5px;color:var(--yellow);font-size:9px;text-transform:uppercase;letter-spacing:.14em}
+.mix-title{margin:0;font-size:16px}.tags{margin-top:5px;color:var(--muted);font-size:10px}
+.guest-list{border-top:1px solid var(--line)}.guest{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:17px 0;border-bottom:1px solid var(--line)}
+.guest-number{color:var(--yellow);font-size:10px;letter-spacing:.14em}.guest-title{font-size:18px;font-weight:700}.guest-title small{display:block;margin-top:3px;color:var(--muted);font-size:10px;font-weight:400;text-transform:uppercase;letter-spacing:.12em}
+.guest-action{font-size:9px;text-transform:uppercase;letter-spacing:.13em}.guest:hover .guest-title,.guest:hover .guest-action{color:var(--yellow)}
+.editorial-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px}.editorial-grid h2{margin:0 0 17px;font-size:13px;text-transform:uppercase;letter-spacing:.13em}
+.editorial-grid p{max-width:510px;margin:0;color:#c1beb6;font-size:15px;line-height:1.55}.editorial-grid strong{color:var(--fg)}.contact-link{display:inline-block;margin-top:22px;padding-bottom:3px;border-bottom:1px solid var(--yellow);color:var(--yellow);font-size:12px}
+footer{padding:38px 0 28px}.footer{display:flex;justify-content:space-between;gap:30px;color:var(--muted);font-size:9px;text-transform:uppercase;letter-spacing:.13em}
+@media(max-width:800px){.wrap{width:min(100% - 28px,1180px)}.header-inner{height:auto;min-height:54px;align-items:flex-start;padding:15px 0}nav{gap:11px;font-size:8px;flex-wrap:wrap;justify-content:flex-end}
+.hero{padding:48px 0 40px}.hero-grid{grid-template-columns:1fr;gap:24px}.radio-inner{grid-template-columns:auto 1fr;padding:12px 0}.radio-button{display:none}
+section.content{padding:44px 0 52px}.mix-grid{grid-template-columns:repeat(2,1fr);gap:24px 12px}.mix-title{font-size:14px}.tags{font-size:9px}.cover-link::after{display:none}
+.editorial-grid{grid-template-columns:1fr;gap:45px}.guest{grid-template-columns:48px 1fr auto;gap:12px}.guest-title{font-size:15px}.footer{flex-direction:column;gap:8px}}
+</style>
+</head>
+<body>
+<header><div class="wrap header-inner"><a class="brand" href="#">ARCHIVRES</a><nav><a href="#radio">Radio</a><a href="#mixes">Mixes</a><a href="#guests">Guests</a><a href="#about">About</a><a href="#submit">Submit</a></nav></div></header>
+<main>
+<div class="hero"><div class="wrap hero-grid"><div><p class="eyebrow">Radio collages / Lyon — Paris</p><h1>Selected grooves for bleeding ears.</h1></div><p class="intro">Collages sonores, sélections musicales et archives personnelles. Musiques, conversations, films et fréquences alternatives.</p></div></div>
+<div class="radio" id="radio"><div class="wrap radio-inner"><div class="onair"><span class="dot"></span>ARCHIVRES RADIO</div><div class="radio-title">Continuous transmission <span>— bientôt en ligne</span></div><div class="radio-button">OFF AIR</div></div></div>
+<section class="content" id="mixes"><div class="wrap"><div class="section-head"><h2>Mixes</h2><p>Archive 01—06</p></div><div class="mix-grid">
+<article><a class="cover-link" href="https://soundcloud.com/archivres_radio/archivre_06-sans-moderation" target="_blank" rel="noopener"><img src="assets/archivre-06-sans-moderation.webp" alt="Sans Modération"></a><div class="mix-meta"><span class="mix-number">ARCHIVRE_06</span><h3 class="mix-title">Sans Modération</h3><div class="tags">Collage / Post-punk / Experimental</div></div></article>
+<article><a class="cover-link" href="https://soundcloud.com/archivres_radio/archivre_05-transistor" target="_blank" rel="noopener"><img src="assets/archivre-05-transistor.webp" alt="TRANSISTOR"></a><div class="mix-meta"><span class="mix-number">ARCHIVRE_05</span><h3 class="mix-title">TRANSISTOR</h3><div class="tags">Archives / House / French music</div></div></article>
+<article><a class="cover-link" href="https://soundcloud.com/archivres_radio/archivre_04-ufology" target="_blank" rel="noopener"><img src="assets/archivre-04-ufology.webp" alt="UFOLOGY"></a><div class="mix-meta"><span class="mix-number">ARCHIVRE_04</span><h3 class="mix-title">UFOLOGY</h3><div class="tags">Electronic / Dub / Experimental</div></div></article>
+<article><a class="cover-link" href="https://soundcloud.com/archivres_radio/archivre_03-search-destroy" target="_blank" rel="noopener"><img src="assets/archivre-03-search-destroy.webp" alt="Search & Destroy"></a><div class="mix-meta"><span class="mix-number">ARCHIVRE_03</span><h3 class="mix-title">Search &amp; Destroy</h3><div class="tags">Punk / Post-punk / Rock</div></div></article>
+<article><a class="cover-link" href="https://soundcloud.com/archivres_radio/archivre_02-weirdies" target="_blank" rel="noopener"><img src="assets/archivre-02-weirdies.webp" alt="Weirdies"></a><div class="mix-meta"><span class="mix-number">ARCHIVRE_02</span><h3 class="mix-title">Weirdies</h3><div class="tags">Post-punk / Dub / Cold wave</div></div></article>
+<article><a class="cover-link" href="https://soundcloud.com/daboulistan" target="_blank" rel="noopener"><img src="assets/archivre-01-golden-hour.webp" alt="Golden Hour"></a><div class="mix-meta"><span class="mix-number">ARCHIVRE_01</span><h3 class="mix-title">Golden Hour</h3><div class="tags">Soundtrack / Trip-hop / Memories</div></div></article>
+</div></div></section>
+<section class="content" id="guests"><div class="wrap"><div class="section-head"><h2>Guest transmissions</h2><p>Selections extérieures</p></div><div class="guest-list">
+<a class="guest" href="https://soundcloud.com/archivres_radio" target="_blank" rel="noopener"><span class="guest-number">001</span><span class="guest-title">MIXTURE — IRIS<small>ARCHIVRES GUEST</small></span><span class="guest-action">Écouter ↗</span></a>
+</div></div></section>
+<section class="content" id="about"><div class="wrap editorial-grid"><div><h2>About</h2><p><strong>ARCHIVRES</strong> est une série de collages radiophoniques mêlant sélections musicales, conversations, films et archives sonores. Beaucoup des enregistrements utilisés viennent d'archives personnelles : prises de son, conversations, vinyles, cassettes et fragments accumulés au fil du temps.</p></div>
+<div id="submit"><h2>Submit / Contact</h2><p>Radios, labels, artistes et selectors : pour proposer un mix, une collaboration, une diffusion ou une guest transmission, écrivez directement à ARCHIVRES.</p><a class="contact-link" href="mailto:contact.archivres@gmail.com">contact.archivres@gmail.com ↗</a></div></div></section>
+</main>
+<footer><div class="wrap footer"><span>ARCHIVRES — Radio Collages</span><span>Instagram @archivres.radio</span><span>archivres.fr</span></div></footer>
+</body></html>
