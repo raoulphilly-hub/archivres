@@ -1,0 +1,198 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ARCHIVRES — Mixes</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      background: #070707;
+      color: #f5f3ec;
+      font-family: Arial, sans-serif;
+    }
+    header {
+      padding: 24px 5%;
+      border-bottom: 1px solid #333;
+    }
+    .logo {
+      font-size: clamp(28px, 5vw, 55px);
+      font-weight: 900;
+      letter-spacing: -2px;
+      text-decoration: none;
+      color: inherit;
+    }
+    main {
+      max-width: 1050px;
+      margin: 40px auto;
+      padding: 0 24px;
+    }
+    .back {
+      color: #f5f3ec;
+      font-size: 12px;
+      letter-spacing: 1px;
+      text-decoration: none;
+    }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 280px) 1fr;
+      gap: 35px;
+      margin: 35px 0;
+      align-items: start;
+    }
+    .cover {
+      width: 100%;
+      display: block;
+    }
+    .number {
+      color: #f2b83f;
+      font-size: 12px;
+      letter-spacing: 2px;
+    }
+    h1 { font-size: clamp(28px, 4vw, 48px); margin: 12px 0; }
+    .genres { color: #aaa; font-size: 13px; }
+    .player { margin-top: 25px; }
+    .description {
+      line-height: 1.8;
+      max-width: 720px;
+      margin: 35px 0;
+    }
+    h2 { font-size: 15px; letter-spacing: 2px; margin-top: 45px; }
+    .tracklist {
+      padding-left: 24px;
+      line-height: 2;
+      font-size: 14px;
+      color: #ccc;
+    }
+    footer {
+      margin: 60px 0 20px;
+      color: #888;
+      font-size: 12px;
+    }
+    @media (max-width: 650px) {
+      .hero { grid-template-columns: 1fr; }
+      .cover { max-width: 240px; }
+      main { margin-top: 25px; }
+    }
+  </style>
+</head>
+<body>
+<header>
+  <a class="logo" href="index.html">ARCHIVRES</a>
+</header>
+
+<main>
+  <a class="back" href="index.html">← RETOUR AUX MIXES</a>
+  <div id="mix-content"></div>
+</main>
+
+<script>
+const mixes = {
+  "08": {
+    number: "ARCHIVRE_08",
+    title: "No Toyz Allowed",
+    genres: "Hip-hop / UK Ragga / Dub",
+    cover: "assets/archivre_08_notoyzallowed.png",
+    soundcloud: "https://soundcloud.com/archivres_radio/archivre_07-no-toyz-allowed-20",
+    description: "Une heure de hip-hop dédiée à la culture graffiti. Des beats, des samples et des archives sonores, entre murs, métros et culture underground.",
+    radio: "JET FM — 91.2 FM (Nantes)",
+    tracks: [
+      "Alphabet Aerobics — Blackalicious",
+      "Extrait — Jackson, Dion, Teen",
+      "My Name — Planet Asia",
+      "Extrait — Session spray",
+      "Livin' Proof — Group Home",
+      "Ancestor's Blues — Javier Santiago, Wonway Posibul",
+      "Class A — Freestyle, DJ MK",
+      "Extrait INA — 1984 Graffiti",
+      "Get Into It — Lady Lux",
+      "Les 2 Neg — Cut Killer, 2Bal/2Neg",
+      "Man Down — Mobb Deep",
+      "Movez Lang — Beat 2 Boul, Sages Poètes de la Rue, Lunatic",
+      "Extrait — Jam des JTM, Pt 2, interview Vesty",
+      "I Ain't Goin Out Like That — Cypress Hill",
+      "Extrait — Les Vandales du graffiti à Paris / Banlieue, Tracks Arte",
+      "Refuse to Lose — Non Phixion, Ill Bill",
+      "Smiff n' Wessun — Sound Bwoy Bureill",
+      "Scratch Remix — Kitachi",
+      "Extrait — Azyle, le juste prix, Mediapart",
+      "The Boss Man — Brick Flava",
+      "Gwan Like Dem Bad — Bluntskull ft. Burro Banton"
+    ]
+  }
+};
+
+const id = new URLSearchParams(window.location.search).get("id") || "08";
+const mix = mixes[id];
+const container = document.getElementById("mix-content");
+
+if (mix) {
+  const hero = document.createElement("section");
+  hero.className = "hero";
+
+  const image = document.createElement("img");
+  image.className = "cover";
+  image.src = mix.cover;
+  image.alt = mix.title;
+
+  const info = document.createElement("div");
+  const number = document.createElement("div");
+  number.className = "number";
+  number.textContent = mix.number;
+
+  const title = document.createElement("h1");
+  title.textContent = mix.title;
+
+  const genres = document.createElement("p");
+  genres.className = "genres";
+  genres.textContent = mix.genres;
+
+  const player = document.createElement("iframe");
+  player.className = "player";
+  player.width = "100%";
+  player.height = "166";
+  player.style.border = "0";
+  player.allow = "autoplay";
+  player.title = "Lecteur SoundCloud";
+  player.src = "https://w.soundcloud.com/player/?url=" +
+    encodeURIComponent(mix.soundcloud) +
+    "&color=%23ff5500&auto_play=false";
+
+  info.append(number, title, genres, player);
+  hero.append(image, info);
+  container.append(hero);
+
+  const description = document.createElement("p");
+  description.className = "description";
+  description.textContent = mix.description;
+  container.append(description);
+
+  const radio = document.createElement("p");
+  radio.className = "genres";
+  radio.textContent = mix.radio;
+  container.append(radio);
+
+  const heading = document.createElement("h2");
+  heading.textContent = "TRACKLIST";
+  container.append(heading);
+
+  const list = document.createElement("ol");
+  list.className = "tracklist";
+  mix.tracks.forEach(track => {
+    const item = document.createElement("li");
+    item.textContent = track;
+    list.append(item);
+  });
+  container.append(list);
+
+  const footer = document.createElement("footer");
+  footer.textContent = "Selected grooves for bleeding ears.";
+  container.append(footer);
+} else {
+  container.textContent = "Mix introuvable.";
+}
+</script>
+</body>
+</html>
